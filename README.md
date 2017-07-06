@@ -3,33 +3,19 @@ An easy-to-use, lightweight style transfer implementation with [SqueezeNet](http
 
 ## Step by Step Usage 
 1. Download this folder on this github page.
-2. Enter this folder from command line and install a virtual environment equipped with python 3.5+. To do so, try:
-  * 
+2. Enter this folder from command line and create a virtual environment equipped with python 3.5+. To do so, try something like the following. If you use anaconda, click [here](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/) for help. General help on virtual environments can be found [here](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
   ```
   cd style_transfer-master
   sudo pip install virtualenv      # This may already be installed
-  virtualenv -p python3 ve       # Create a virtual environment (python3)
+  virtualenv -p python3 ve       # Create a virtual environment (python3) named ve
   source ve/bin/activate         # Activate the virtual environment
-  pip install -r requirements.txt # Install required packages
   source deactive                 # deactivate when done.
   ``` 
+3. Install dependencies via ```pip install -r requirements.txt```
+4. You are good to go. Transfer style by running ```python3 styletransfer.py input_image style_image
+```. For example, run ```python3 styletransfer.py input/stats.jpg style/starry_night.jpg```. Note that you may need to replace ```python3``` by whatever name your python interpreter has in the virtual environment. 
 
 
-
-* Install skimage via pip: ```sudo pip install scikit-image```
-* Install [CUDA](https://developer.nvidia.com/cuda-downloads) and Cudnn
-* Install [Mxnet](https://github.com/dmlc/mxnet), please set "USE_NVRTC = 1" in config.mk before compiling
-* Download pretrained [VGG model](https://github.com/dmlc/web-data/raw/master/mxnet/neural-style/model/vgg19.params) and save it to the root of this repository.
-* Download [MSCOCO](http://msvocds.blob.core.windows.net/coco2014/train2014.zip) dataset if you want to train models.
-
-
-## Usage
-Folder mrf_cnn implements [Combining Markov Random Fields and Convolutional Neural Networks for Image Synthesis](https://arxiv.org/abs/1601.04589). It is an optimization based method, can provide delicate result but is slow. [Original Torch version](https://github.com/chuanli11/CNNMRF)
-
-Folder perceptual implements [Perceptual Losses for Real-Time Style Transfer and Super-Resolution](https://arxiv.org/abs/1603.08155). It trains a network to do optimization and is very fast. [Original Torch version](https://github.com/jcjohnson/fast-neural-style)
-
-Folder texturenet implements [Texture Networks: Feed-forward Synthesis of Textures and Stylized Images](http://arxiv.org/abs/1603.03417). It also trains a network to do optimization. [Original Torch version](https://github.com/DmitryUlyanov/texture_nets)
-
-Folder fast_mrf_cnn trains network to do optimization in mrf_cnn. It is very fast and can give result similar to but not as good as mrf_cnn.
-
-Folder old_stuff contains some pretrained texture network models.
+## Additional Info
+* This is an implementation of [\"Image Style Transfer Using Convolutional Neural Networks\" (Gatys et al., CVPR 2015)](http://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
+* Main function with adjustable parameters is in styletransfer.py. Work horse functions are in model_utils.py
