@@ -1,7 +1,21 @@
 # Neural Style
-A lightweight style transfer implementation with [SqueezeNet](https://arxiv.org/abs/1602.07360). Less than 1 minute runtime per image on my 2014 macbook pro. Adapted from Assignment 3 of [Stanford cs231n](http://cs231n.stanford.edu/)
+An easy-to-use, lightweight style transfer implementation with [SqueezeNet](https://arxiv.org/abs/1602.07360). Less than 1 minute runtime per image on my 2014 macbook pro. Adapted from Assignment 3 of [Stanford cs231n](http://cs231n.stanford.edu/)
 
-## Requirements 
+## Step by Step Usage 
+1. Download this folder on this github page.
+2. Enter this folder from command line and install a virtual environment equipped with python 3.5+. To do so, try:
+  * 
+  ```
+  cd style_transfer-master
+  sudo pip install virtualenv      # This may already be installed
+  virtualenv -p python3 ve       # Create a virtual environment (python3)
+  source ve/bin/activate         # Activate the virtual environment
+  pip install -r requirements.txt # Install required packages
+  source deactive                 # deactivate when done.
+  ``` 
+
+
+
 * Install skimage via pip: ```sudo pip install scikit-image```
 * Install [CUDA](https://developer.nvidia.com/cuda-downloads) and Cudnn
 * Install [Mxnet](https://github.com/dmlc/mxnet), please set "USE_NVRTC = 1" in config.mk before compiling
