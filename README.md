@@ -1,5 +1,5 @@
 # Neural Style
-style transfer with mxnet
+A lightweight style transfer implementation with [SqueezeNet](https://arxiv.org/abs/1602.07360). Less than 1 minute runtime per image on my 2014 macbook pro. Adapted from Assignment 3 of [Stanford cs231n](http://cs231n.stanford.edu/)
 
 ## Requirements 
 * Install skimage via pip: ```sudo pip install scikit-image```
